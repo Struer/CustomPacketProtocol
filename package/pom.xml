@@ -9,9 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.cn</groupId>
-    <artifactId>common</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>com</groupId>
+    <artifactId>package</artifactId>
     <build>
         <plugins>
             <plugin>
@@ -25,18 +24,13 @@
         </plugins>
     </build>
     <dependencies>
-
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty</artifactId>
             <version>3.10.6.Final</version>
-        </dependency>
-        <dependency>
-            <groupId>io.reactivex</groupId>
-            <artifactId>rxjava</artifactId>
-            <version>1.2.0</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
+
 
 </project>

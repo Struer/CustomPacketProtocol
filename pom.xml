@@ -13,6 +13,7 @@
         <module>server</module>
         <module>client</module>
         <module>PipeLineTest</module>
+        <module>package</module>
     </modules>
 
 </project>
