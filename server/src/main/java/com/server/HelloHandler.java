@@ -1,5 +1,6 @@
 package com.server;
 
+import org.jboss.netty.channel.Channel;
 import org.jboss.netty.channel.ChannelHandlerContext;
 import org.jboss.netty.channel.ChannelStateEvent;
 import org.jboss.netty.channel.ExceptionEvent;
@@ -11,6 +12,11 @@ import com.cn.model.Response;
 import com.cn.model.StateCode;
 import com.cn.module.fuben.request.FightRequest;
 import com.cn.module.fuben.response.FightResponse;
+
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.net.SocketAddress;
+
 /**
  * 消息接受处理类
  * @author -琴兽-
@@ -23,6 +29,13 @@ public class HelloHandler extends SimpleChannelHandler {
 	 */
 	@Override
 	public void messageReceived(ChannelHandlerContext ctx, MessageEvent e) throws Exception {
+
+		// 打印客户端IP和PORT
+		Channel channel = ctx.getChannel();
+		InetSocketAddress remoteAddress = (InetSocketAddress)channel.getRemoteAddress();
+		InetAddress address = remoteAddress.getAddress();
+		int port = remoteAddress.getPort();
+		System.out.println("客户端IP："+address.getHostAddress()+",PORT:"+port);
 
 		Request message = (Request)e.getMessage();
 		
